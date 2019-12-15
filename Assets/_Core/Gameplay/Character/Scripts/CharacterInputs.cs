@@ -24,16 +24,18 @@ public class CharacterInputs : MonoBehaviour
 
 	#region Callbacks
 	private void Update() {
-        if(Input.touchCount > 0 && !movements.IsMoving) {
-			GetTouchDistance();
-			if(Input.GetTouch(0).phase == TouchPhase.Began) {
-				_loading = true;
+		if (!movements.IsMoving) {
+			if (Input.touchCount > 0) {
+				GetTouchDistance();
+				if (Input.GetTouch(0).phase == TouchPhase.Began) {
+					_loading = true;
+				}
 			}
-		}
-		else {
-			if(_loading == true) {
-				Throw();
-				_loading = false;
+			else {
+				if (_loading == true) {
+					Throw();
+					_loading = false;
+				}
 			}
 		}
     }
@@ -53,7 +55,6 @@ public class CharacterInputs : MonoBehaviour
 	private void Throw() {
 		_chargeAmount = 0f;
 		movements.StartMove(_direction.normalized, _distance);
-		Debug.Log("Throw");
 		_direction = Vector2.zero;
 	}
 
