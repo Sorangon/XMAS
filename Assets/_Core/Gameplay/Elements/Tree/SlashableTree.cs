@@ -7,6 +7,8 @@ public class SlashableTree : MonoBehaviour {
 
 	public PlayerScoreData playerScoreData;
 	public Animator animator;
+	public Sprite[] _sprites = { };
+	public SpriteRenderer _renderer;
 	
 	#region Events
 	public delegate void TreeAction();
@@ -14,6 +16,10 @@ public class SlashableTree : MonoBehaviour {
 
 	public UnityEvent OnTreeSlashed;
 	#endregion
+
+	public void Start() {
+		_renderer.sprite = _sprites[Random.Range(0, _sprites.Length)];
+	}
 
 	#region Cut
 	public void Cut() {
@@ -37,6 +43,6 @@ public class SlashableTree : MonoBehaviour {
 		playerScoreData.IncrementScore();
 
 		// Launch UnityAction OnTreeSlashed
-		OnTreeSlashed.Invoke();
+		OnTreeSlashed?.Invoke();
 	}
 }

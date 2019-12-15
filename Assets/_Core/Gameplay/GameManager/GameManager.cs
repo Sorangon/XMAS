@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
+using DG.Tweening;
 
 public class GameManager : MonoBehaviour {
 
@@ -30,6 +31,7 @@ public class GameManager : MonoBehaviour {
 
 	public void Lose() {
 		Debug.Log("T mor lol");
+		Camera.main.DOShakePosition(0.5f, 0.5f, 20);
 		_onLoose?.Invoke();
 	}
 

@@ -5,6 +5,7 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
 	#region Settings
+	public bool _debugRocks = false;
 	public Vector2 center = Vector2.zero;
 	public Vector2 size = Vector2.one;
 	public LayerMask _exceptionLayers = new LayerMask();
@@ -80,7 +81,7 @@ public class Spawner : MonoBehaviour
 
 	private void NewWave() {
 		rockWave--;
-		int rocks = 0;
+		int rocks = _debugRocks ? 1 : 0;
 		if(rockWave <= 0) {
 			rockWave = 3;
 			rocks = 1;

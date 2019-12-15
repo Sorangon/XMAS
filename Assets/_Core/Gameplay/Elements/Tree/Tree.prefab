@@ -144,6 +144,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerScoreData: {fileID: 11400000, guid: 10b57e07dff366e43a6758b701324fd8, type: 2}
   animator: {fileID: 95532862090732754}
+  _sprites:
+  - {fileID: 21300000, guid: e4f98ad6e856d364ba780f7d0e372515, type: 3}
+  - {fileID: 21300000, guid: 9da91c97cbdda4e41b190cb26e0a51c6, type: 3}
+  - {fileID: 21300000, guid: e0a52a9de14082a49bb3df9a61357aa1, type: 3}
+  - {fileID: 21300000, guid: 7ace41ea0b811e944b7d1eaf38ec5dd2, type: 3}
+  _renderer: {fileID: 3260220316964830703}
   OnTreeSlashed:
     m_PersistentCalls:
       m_Calls:
