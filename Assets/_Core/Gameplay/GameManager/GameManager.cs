@@ -7,6 +7,11 @@ public class GameManager : MonoBehaviour {
 	public Spawner spawner = null;
 	private int _logs = 0;
 	public int Logs => _logs;
+	public static GameManager gameManager;
+
+	private void Awake() {
+		gameManager = this;
+	}
 
 	private void Start() {
 		StartGame();
@@ -18,5 +23,9 @@ public class GameManager : MonoBehaviour {
 
 	public void CollectLog(int collected) {
 		_logs += collected;
+	}
+
+	public void Lose() {
+		Debug.Log("T mor lol");
 	}
 }

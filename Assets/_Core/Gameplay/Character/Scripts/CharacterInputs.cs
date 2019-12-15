@@ -16,9 +16,10 @@ public class CharacterInputs : MonoBehaviour
 	private float _chargeAmount = 0.0f;
 	private float _distance = 0.0f;
 	private Vector2 _direction = Vector2.zero;
+	private bool _lost = false;
 	#endregion
 
-	#region 
+	#region References
 	public CharacterMovements movements;
 	public GameObject aimLogo = null;
 	#endregion
@@ -30,6 +31,8 @@ public class CharacterInputs : MonoBehaviour
 	}
 
 	private void Update() {
+		if (_lost) return;
+
 		if (Input.touchCount > 0) {
 			GetTouchDistance();
 			if (Input.GetTouch(0).phase == TouchPhase.Began) {

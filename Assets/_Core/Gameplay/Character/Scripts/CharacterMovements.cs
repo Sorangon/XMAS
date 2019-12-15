@@ -12,8 +12,6 @@ public class CharacterMovements : MonoBehaviour {
 	public Vector2 Direction => (_rb.velocity).normalized;
 	#endregion
 
-	#region Currents
-	#endregion
 
 	#region References
 	[Header("Components")]
@@ -29,6 +27,11 @@ public class CharacterMovements : MonoBehaviour {
 	#region Movement
 	public void Impulse(Vector2 direction, float distance) {
 		_rb.AddForce(direction * distance * _force);
+	}
+
+	public void Stop() {
+		_rb.velocity = Vector2.zero;
+		GameManager.gameManager.Lose();
 	}
 	#endregion
 
