@@ -1,0 +1,225 @@
+fileFormatVersion: 2
+guid: eb193a6de6c227941ba3b3cda2135120
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: arms.000_arms.000
+    100002: arms.002_arms.002
+    100004: blade_blade
+    100006: Cylinder_Cylinder
+    100008: head.001_head.001
+    100010: head_head
+    100012: knees.001_knees.001
+    100014: knees_knees
+    100016: manche_manche
+    100018: pommeaux_pommeaux
+    100020: //RootNode
+    100022: Sphere_Sphere
+    100024: torso_torso
+    400000: arms.000_arms.000
+    400002: arms.002_arms.002
+    400004: blade_blade
+    400006: Cylinder_Cylinder
+    400008: head.001_head.001
+    400010: head_head
+    400012: knees.001_knees.001
+    400014: knees_knees
+    400016: manche_manche
+    400018: pommeaux_pommeaux
+    400020: //RootNode
+    400022: Sphere_Sphere
+    400024: torso_torso
+    2100000: arms.000_arms.000Mat
+    2100002: arms.002_arms.002Mat
+    2100004: blade_bladeMat
+    2100006: Cylinder_CylinderMat
+    2100008: head.001_head.001Mat
+    2100010: head_headMat
+    2100012: knees.001_knees.001Mat
+    2100014: knees_kneesMat
+    2100016: manche_mancheMat
+    2100018: pommeaux_pommeauxMat
+    2100020: Sphere_SphereMat
+    2100022: torso_torsoMat
+    2300000: arms.000_arms.000
+    2300002: arms.002_arms.002
+    2300004: blade_blade
+    2300006: Cylinder_Cylinder
+    2300008: head.001_head.001
+    2300010: head_head
+    2300012: knees.001_knees.001
+    2300014: knees_knees
+    2300016: manche_manche
+    2300018: pommeaux_pommeaux
+    2300020: Sphere_Sphere
+    2300022: torso_torso
+    3300000: arms.000_arms.000
+    3300002: arms.002_arms.002
+    3300004: blade_blade
+    3300006: Cylinder_Cylinder
+    3300008: head.001_head.001
+    3300010: head_head
+    3300012: knees.001_knees.001
+    3300014: knees_knees
+    3300016: manche_manche
+    3300018: pommeaux_pommeaux
+    3300020: Sphere_Sphere
+    3300022: torso_torso
+    4300000: arms.000_arms.000
+    4300002: arms.002_arms.002
+    4300004: blade_blade
+    4300006: Cylinder_Cylinder
+    4300008: head.001_head.001
+    4300010: head_head
+    4300012: knees.001_knees.001
+    4300014: knees_knees
+    4300016: manche_manche
+    4300018: pommeaux_pommeaux
+    4300020: Sphere_Sphere
+    4300022: torso_torso
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cylinder_CylinderMat
+    second: {fileID: 2100000, guid: 1d51bd968ca4511459604035c4248952, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Sphere_SphereMat
+    second: {fileID: 2100000, guid: 229d484e67310e847ba7f5525b865152, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: arms.000_arms.000Mat
+    second: {fileID: 2100000, guid: 3e1e150a1bb16aa4bb6b3df371cf6504, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: arms.002_arms.002Mat
+    second: {fileID: 2100000, guid: 53b1a3d1ab0f45d4cb2b204fa8079083, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: blade_bladeMat
+    second: {fileID: 2100000, guid: ce56c56bc0f0979438afb65e7bc1c222, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: head.001_head.001Mat
+    second: {fileID: 2100000, guid: d91251264a47b944c8210d5679c76b15, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: head_headMat
+    second: {fileID: 2100000, guid: 710dc184b9c980b4b89d027bd17dec06, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: knees.001_knees.001Mat
+    second: {fileID: 2100000, guid: 3d3189504f2cedc4e9d12e7a583a8165, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: knees_kneesMat
+    second: {fileID: 2100000, guid: 93a125c183c123a4894af11587e19b8d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: manche_mancheMat
+    second: {fileID: 2100000, guid: cedd47745da2749468d16d2b244006be, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pommeaux_pommeauxMat
+    second: {fileID: 2100000, guid: e0f26d4199e49eb4c975abcc587167e3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: torso_torsoMat
+    second: {fileID: 2100000, guid: 4d1ced9c217bd474a97ed2c896df5f51, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

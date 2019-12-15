@@ -54,7 +54,7 @@ public class CharacterInputs : MonoBehaviour
 		_chargeAmount += Time.deltaTime / distanceGrowTime;
 		_distance = Mathf.Lerp(minDistance, maxDistance, distanceGrowCurve.Evaluate(_chargeAmount));
 
-		aimLogo.transform.localScale = new Vector3(1f,0f,1f) + Vector3.up * _distance;
+		aimLogo.transform.localScale = new Vector3(1f,0f,1f) + Vector3.down * _distance;
 		float angle = Mathf.Atan2(_direction.y, _direction.x) * Mathf.Rad2Deg + 90f;
 		aimLogo.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 
