@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+	#region References
+	public Tree treePrefab = null;
+	public Rock rockPrefab = null;
+	#endregion
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
+	#region Spawn
+
+
+
+	#endregion
 }
