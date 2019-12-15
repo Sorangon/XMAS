@@ -18,43 +18,52 @@ public class CharacterInputs : MonoBehaviour
 	private Vector2 _direction = Vector2.zero;
 	#endregion
 
-	#region References
+	#region 
 	public CharacterMovements movements;
+	public GameObject aimLogo = null;
 	#endregion
 
 	#region Callbacks
+
+	private void Start() {
+		aimLogo.SetActive(false);		
+	}
+
 	private void Update() {
-		if (!movements.IsMoving) {
-			if (Input.touchCount > 0) {
-				GetTouchDistance();
-				if (Input.GetTouch(0).phase == TouchPhase.Began) {
-					_loading = true;
-				}
-			}
-			else {
-				if (_loading == true) {
-					Throw();
-					_loading = false;
-				}
+		if (Input.touchCount > 0) {
+			GetTouchDistance();
+			if (Input.GetTouch(0).phase == TouchPhase.Began) {
+				_loading = true;
+				aimLogo.SetActive(true);
 			}
 		}
-    }
+		else {
+			if (_loading == true) {
+				Throw();
+				_loading = false;
+				aimLogo.SetActive(false);
+			}
+		}
+	}
 
 	private void GetTouchDistance() {
 		_direction = Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position);
 		_direction -= (Vector2)transform.position;
 		_direction.Normalize();
 		_direction = -_direction;
-
 		_chargeAmount += Time.deltaTime / distanceGrowTime;
 		_distance = Mathf.Lerp(minDistance, maxDistance, distanceGrowCurve.Evaluate(_chargeAmount));
+
+		aimLogo.transform.localScale = new Vector3(1f,0f,1f) + Vector3.up * _distance;
+		float angle = Mathf.Atan2(_direction.y, _direction.x) * Mathf.Rad2Deg + 90f;
+		aimLogo.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 
 		Debug.DrawRay(transform.position, _direction * _distance, Color.red);
 	}
 
 	private void Throw() {
 		_chargeAmount = 0f;
-		movements.StartMove(_direction.normalized, _distance);
+		movements.Impulse(_direction.normalized, _distance);
 		_direction = Vector2.zero;
 	}
 
