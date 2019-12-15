@@ -17,8 +17,9 @@ public class Spawner : MonoBehaviour
 
 	#region Current
 	private int _remaining = 0;
-	private int _level = 0;
+	private int _level = 1;
 	private int rockWave = 3;
+	private bool _generating = false;
 	#endregion
 
 	#region Callbacks
@@ -32,6 +33,7 @@ public class Spawner : MonoBehaviour
 
 	#region Spawn
 	public void Spawn(int trees, int rocks) {
+		Debug.Log(string.Format("Generate {0} trees and {1} rock",trees, rocks));
 		for(int i = 0; i < trees; i++) {
 			SlashableTree tree = Instantiate(treePrefab, GetRandomVector() , Quaternion.identity, transform);
 			_remaining++;
@@ -66,10 +68,13 @@ public class Spawner : MonoBehaviour
 
 	#region Events
 	public void OnCutTree() {
+		Debug.Log("Cut");
 		_remaining--;
 
-		if(_remaining < 3) {
+		if(_remaining < 3 && !_generating) {
 			Invoke("NewWave", 0.5f);
+			Debug.Log("Spawn");
+			_generating = true;
 		}
 	}
 
@@ -81,8 +86,10 @@ public class Spawner : MonoBehaviour
 			rocks = 1;
 		}
 
-		int trees = 3 * Mathf.RoundToInt((float)_level / 3);
+		int trees = 3 * Mathf.CeilToInt((float)_level / 3);
 		Spawn(trees, rocks);
+		_level++;
+		_generating = false;
 	}
 	#endregion
 }

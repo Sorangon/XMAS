@@ -16,7 +16,7 @@ public class CharacterInputs : MonoBehaviour
 	private float _chargeAmount = 0.0f;
 	private float _distance = 0.0f;
 	private Vector2 _direction = Vector2.zero;
-	private bool _lost = false;
+	public bool _lock = false;
 	#endregion
 
 	#region References
@@ -31,7 +31,7 @@ public class CharacterInputs : MonoBehaviour
 	}
 
 	private void Update() {
-		if (_lost) return;
+		if (_lock) return;
 
 		if (Input.touchCount > 0) {
 			GetTouchDistance();
@@ -68,6 +68,10 @@ public class CharacterInputs : MonoBehaviour
 		_chargeAmount = 0f;
 		movements.Impulse(_direction.normalized, _distance);
 		_direction = Vector2.zero;
+	}
+
+	public void Lock() {
+		_lock = true;
 	}
 
 	#endregion

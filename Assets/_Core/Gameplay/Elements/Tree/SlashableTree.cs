@@ -17,7 +17,6 @@ public class SlashableTree : MonoBehaviour {
 
 	#region Cut
 	public void Cut() {
-		OnCutTree?.Invoke();
 	}
 	#endregion
 
@@ -32,8 +31,10 @@ public class SlashableTree : MonoBehaviour {
 		// Destroy after 2.3 seconds
 		Destroy(gameObject, 2.3f);
 
+		OnCutTree?.Invoke();
+
 		// Increment score
-		playerScoreData.Reset();
+		playerScoreData.IncrementScore();
 
 		// Launch UnityAction OnTreeSlashed
 		OnTreeSlashed.Invoke();

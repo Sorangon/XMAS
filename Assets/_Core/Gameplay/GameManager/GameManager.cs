@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class GameManager : MonoBehaviour {
 
@@ -8,6 +9,7 @@ public class GameManager : MonoBehaviour {
 	private int _logs = 0;
 	public int Logs => _logs;
 	public static GameManager gameManager;
+	public UnityEvent _onLoose = new UnityEvent();
 
 	private void Awake() {
 		gameManager = this;
@@ -27,5 +29,6 @@ public class GameManager : MonoBehaviour {
 
 	public void Lose() {
 		Debug.Log("T mor lol");
+		_onLoose?.Invoke();
 	}
 }
