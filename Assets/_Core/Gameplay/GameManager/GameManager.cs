@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
 
@@ -30,5 +31,9 @@ public class GameManager : MonoBehaviour {
 	public void Lose() {
 		Debug.Log("T mor lol");
 		_onLoose?.Invoke();
+	}
+
+	public void TryAgain() {
+		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 	}
 }
