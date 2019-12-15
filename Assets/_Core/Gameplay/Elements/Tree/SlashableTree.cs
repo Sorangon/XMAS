@@ -2,17 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SlashableTree : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+public class SlashableTree : MonoBehaviour {
+	#region Events
+	public delegate void TreeAction();
+	public static TreeAction OnCutTree;
+	#endregion
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+	#region Cut
+	public void Cut() {
+		OnCutTree?.Invoke();
+	}
+	#endregion
 }
