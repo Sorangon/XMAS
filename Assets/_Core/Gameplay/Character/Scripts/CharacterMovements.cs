@@ -20,8 +20,9 @@ public class CharacterMovements : MonoBehaviour {
 	#endregion
 
 	private void Update() {
-		float angle = Mathf.Atan2(_rb.velocity.y, _rb.velocity.x) * Mathf.Rad2Deg + 90f;
-		_characterRenderer.transform.rotation = Quaternion.AngleAxis(angle, _rotationAxis.normalized);
+		if(_rb.velocity.magnitude > 2f) {
+			CharacterLookAt(_rb.velocity);
+		}
 	}
 
 	#region Movement
@@ -32,6 +33,14 @@ public class CharacterMovements : MonoBehaviour {
 	public void Stop() {
 		_rb.velocity = Vector2.zero;
 		GameManager.gameManager.Lose();
+	}
+	#endregion
+
+	#region Rendering
+	public void CharacterLookAt(Vector2 direction) {
+		direction.Normalize();
+		float angle = -Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90f;
+		_characterRenderer.transform.rotation = Quaternion.AngleAxis(angle, _rotationAxis.normalized);
 	}
 	#endregion
 

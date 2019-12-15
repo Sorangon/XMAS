@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8549234013350187408}
   - component: {fileID: 2172519036945209375}
   - component: {fileID: 6135725208477642670}
+  - component: {fileID: 114132807790398766}
   m_Layer: 0
   m_Name: Rock
   m_TagString: Rock
@@ -76,7 +77,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 1
-  m_Size: {x: 5.5, y: 6.5}
+  m_Size: {x: 6.8, y: 7.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -97,7 +98,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.15}
   serializedVersion: 2
-  m_Radius: 0.75
+  m_Radius: 0.92
 --- !u!114 &2172519036945209375
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139,3 +140,18 @@ MonoBehaviour:
   _anim: {fileID: 0}
   _slashEffect: {fileID: 9175386836139279661, guid: 9b60b3b20472ace4791697f08b00c3b8,
     type: 3}
+--- !u!114 &114132807790398766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2172519036945209374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cfc8f2ae0df95e47ab3a7e6a9b663bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scale: 0.4
+  duration: 0.8
+  vibrato: 10

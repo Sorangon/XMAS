@@ -16,7 +16,7 @@ public class CharacterInputs : MonoBehaviour
 	private float _chargeAmount = 0.0f;
 	private float _distance = 0.0f;
 	private Vector2 _direction = Vector2.zero;
-	public bool _lock = false;
+	private bool _lock = false;
 	#endregion
 
 	#region References
@@ -60,6 +60,10 @@ public class CharacterInputs : MonoBehaviour
 		aimLogo.transform.localScale = new Vector3(1f,0f,1f) + Vector3.down * _distance;
 		float angle = Mathf.Atan2(_direction.y, _direction.x) * Mathf.Rad2Deg + 90f;
 		aimLogo.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+
+		if(movements._rb.velocity.magnitude <= 2f) {
+			movements.CharacterLookAt(_direction);
+		}
 
 		Debug.DrawRay(transform.position, _direction * _distance, Color.red);
 	}

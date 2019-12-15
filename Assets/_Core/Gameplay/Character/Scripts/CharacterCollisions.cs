@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class CharacterCollisions : MonoBehaviour {
 	#region References
-	public float _rayLength = 0.5f;
 	public CharacterMovements movements;
 	#endregion
 

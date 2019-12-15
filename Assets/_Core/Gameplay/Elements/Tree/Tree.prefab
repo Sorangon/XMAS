@@ -91,6 +91,7 @@ GameObject:
   - component: {fileID: 8555767201211576942}
   - component: {fileID: 5669358858487460723}
   - component: {fileID: 8305694376829555051}
+  - component: {fileID: 114570470743056978}
   - component: {fileID: 95532862090732754}
   m_Layer: 0
   m_Name: Tree
@@ -129,7 +130,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.8
+  m_Radius: 0.91
 --- !u!114 &5669358858487460723
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -179,6 +180,21 @@ MonoBehaviour:
   _anim: {fileID: 95532862090732754}
   _slashEffect: {fileID: 6662252461253156442, guid: b81e176a5b9b4e44fa3c18643b474405,
     type: 3}
+--- !u!114 &114570470743056978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5669358858487460620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cfc8f2ae0df95e47ab3a7e6a9b663bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scale: 0.5
+  duration: 0.2
+  vibrato: 6
 --- !u!95 &95532862090732754
 Animator:
   serializedVersion: 3

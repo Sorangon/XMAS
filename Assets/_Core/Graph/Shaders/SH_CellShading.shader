@@ -5,6 +5,8 @@
         _MainTex ("Texture", 2D) = "white" {}
         _Color ("Color", Color) = (1,1,1,1)
         _LightDir("Light Direction", Vector) = (1,1,1,1)
+        _OutlineWidth("Outline Width", Range(0, 2)) = 0.2
+        _OutlineColor("Outline Color", Color) = (0,0,0,1)
     }
     SubShader
     {
@@ -100,7 +102,6 @@
 
             ENDCG
         }
-
     }
 
     Fallback "Diffuse"

@@ -16,6 +16,10 @@ public class Spawner : MonoBehaviour
 	public Rock rockPrefab = null;
 	#endregion
 
+	#region Constants
+	private const float SPAWN_EFFECT_FREQUENCY = 0.06f;
+	#endregion
+
 	#region Current
 	private int _remaining = 0;
 	private int _level = 1;
@@ -35,28 +39,13 @@ public class Spawner : MonoBehaviour
 	#region Spawn
 	public void Spawn(int trees, int rocks) {
 		Debug.Log(string.Format("Generate {0} trees and {1} rock",trees, rocks));
-		for(int i = 0; i < trees; i++) {
-			SlashableTree tree = Instantiate(treePrefab, GetRandomVector() , Quaternion.identity, transform);
-			_remaining++;
-		}
-
-		for(int i = 0; i < rocks; i++) {
-			Vector2 position;
-			bool respawn = false;
-			do {
-				position = GetRandomVector();
-				Collider2D col = Physics2D.OverlapCircle(position, 2f, _exceptionLayers);
-				if(col != null) {
-					respawn = true;
-				}
-			}
-			while (respawn);
-			Instantiate(rockPrefab, position, Quaternion.identity, transform);
-		}
+		_remaining += trees;
+		StartCoroutine(SpawnCoroutine(trees, rocks));
 	}
 	#endregion
 
 	private Vector2 GetRandomVector() {
+		//Random. 
 		Vector2 randomPos = new Vector2(Random.Range(-size.x / 2f, size.x / 2f), Random.Range(-size.y / 2f, size.y / 2f));
 		randomPos += center;
 		return randomPos;
@@ -91,6 +80,31 @@ public class Spawner : MonoBehaviour
 		Spawn(trees, rocks);
 		_level++;
 		_generating = false;
+	}
+	#endregion
+
+	#region Coroutines
+	private IEnumerator SpawnCoroutine(int trees, int rocks) {
+		for (int i = 0; i < trees; i++) {
+			SlashableTree tree = Instantiate(treePrefab, GetRandomVector(), Quaternion.identity, transform);
+			yield return new WaitForSeconds(SPAWN_EFFECT_FREQUENCY);
+		}
+
+		for (int i = 0; i < rocks; i++) {
+			Vector2 position;
+			float radius = 10f;
+
+			position = GetRandomVector();
+			Debug.Log(GetRandomVector());
+			Collider2D col = Physics2D.OverlapCircle(position, radius, _exceptionLayers);
+			if (col != null) {
+				Debug.Log("Replace rock");
+				Vector2 replacementVec = center - (Vector2)col.transform.position;
+				position = (Vector2)col.transform.position + replacementVec.normalized * radius;
+			}
+			Instantiate(rockPrefab, position, Quaternion.identity, transform);
+			yield return new WaitForSeconds(SPAWN_EFFECT_FREQUENCY);
+		}
 	}
 	#endregion
 }
