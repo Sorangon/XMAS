@@ -171,6 +171,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _anim: {fileID: 95532862090732754}
+  _slashEffect: {fileID: 6662252461253156442, guid: b81e176a5b9b4e44fa3c18643b474405,
+    type: 3}
 --- !u!95 &95532862090732754
 Animator:
   serializedVersion: 3
