@@ -333,7 +333,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c529656721024b4f8a0742ce4929783, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _force: 300
+  _force: 380
   _rotationAxis: {x: 0, y: 1.13, z: -0.96}
   _rb: {fileID: 339918465735123793}
   _characterRenderer: {fileID: 9221222736395699033}
@@ -390,7 +390,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8f0ec87dd4426947a44f250bbc0a7c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rayLength: 1
   movements: {fileID: 339918465735123795}
 --- !u!50 &339918465735123793
 Rigidbody2D:
@@ -405,7 +404,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 5
+  m_LinearDrag: 4.5
   m_AngularDrag: 0
   m_GravityScale: 0
   m_Material: {fileID: 6200000, guid: 70dc4d8f8c8eee4459119c1c21a42842, type: 2}

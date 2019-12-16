@@ -53,7 +53,7 @@ public class CharacterInputs : MonoBehaviour
 		_direction = Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position);
 		_direction -= (Vector2)transform.position;
 		_direction.Normalize();
-		_direction = -_direction;
+		//_direction = -_direction; //Inverts aim direction
 		_chargeAmount += Time.deltaTime / distanceGrowTime;
 		_distance = Mathf.Lerp(minDistance, maxDistance, distanceGrowCurve.Evaluate(_chargeAmount));
 
