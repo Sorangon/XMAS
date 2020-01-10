@@ -32,9 +32,33 @@ public class CharacterInputs : MonoBehaviour
 
 	private void Update() {
 		if (_lock) return;
+#if UNITY_EDITOR
+		CheckMouseInput();
+#endif
+		CheckTouchInput();
+	}
 
+#if UNITY_EDITOR
+	private bool CheckMouseInput() {
+		if(Input.GetMouseButtonDown(0)) {
+			aimLogo.SetActive(true);
+		}
+		if(Input.GetMouseButtonUp(0)) {
+			Debug.Log("Mouse up");
+			Throw();
+			aimLogo.SetActive(false);
+		}
+
+		if (Input.GetMouseButton(0)) {
+			GetTouchDistance(Input.mousePosition);
+		}
+		return false;
+	}
+#endif
+
+	private void CheckTouchInput() {
 		if (Input.touchCount > 0) {
-			GetTouchDistance();
+			GetTouchDistance(Input.GetTouch(0).position);
 			if (Input.GetTouch(0).phase == TouchPhase.Began) {
 				_loading = true;
 				aimLogo.SetActive(true);
@@ -49,11 +73,10 @@ public class CharacterInputs : MonoBehaviour
 		}
 	}
 
-	private void GetTouchDistance() {
-		_direction = Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position);
+	private void GetTouchDistance(Vector2 cursorDirection) {
+		_direction = Camera.main.ScreenToWorldPoint(cursorDirection);
 		_direction -= (Vector2)transform.position;
 		_direction.Normalize();
-		//_direction = -_direction; //Inverts aim direction
 		_chargeAmount += Time.deltaTime / distanceGrowTime;
 		_distance = Mathf.Lerp(minDistance, maxDistance, distanceGrowCurve.Evaluate(_chargeAmount));
 
