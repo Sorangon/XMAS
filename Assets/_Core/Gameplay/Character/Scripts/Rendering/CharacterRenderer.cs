@@ -8,8 +8,8 @@ public class CharacterRenderer : MonoBehaviour {
 	[SerializeField] private Camera _sourceRenderCamera = null;
 	#endregion
 
-	#region Currents
-	private Texture2D _textureCache = null;
+	#region Constants
+	private static readonly int mainTexID = Shader.PropertyToID("_MainTex");
 	#endregion
 
 	#region Callbacks
@@ -18,7 +18,7 @@ public class CharacterRenderer : MonoBehaviour {
 			TextureFormat.ARGB32, false);
 		_targetRenderer.sprite = Sprite.Create(spriteTex,
 			new Rect(0f, 0f, _sourceRenderCamera.targetTexture.width, _sourceRenderCamera.targetTexture.height), 
-			new Vector2(0.5f, 0.5f));
+			new Vector2(0.5f, 0.5f), 100);
 	}
 
 	private void Update() {
@@ -28,14 +28,9 @@ public class CharacterRenderer : MonoBehaviour {
 
 	#region Rendering
 	private void Render() {
-		_targetRenderer.material.SetTexture("_MainTex", _sourceRenderCamera.activeTexture);
-		//Vector2Int rtDim = new Vector2Int(_sourceRenderCamera.targetTexture.width, _sourceRenderCamera.targetTexture.height);
-
-		//_textureCache.ReadPixels(new Rect(0f, 0f, rtDim.x, rtDim.y), 0, 0);
-		//RenderTexture.active = null;
-
-		//Sprite finalSprite = Sprite.Create(_textureCache, new Rect(0f, 0f, rtDim.x, rtDim.y), new Vector2(0.5f, 0.5f));
-		//_targetRenderer.sprite = finalSprite;
+		MaterialPropertyBlock prop = new MaterialPropertyBlock();
+		prop.SetTexture(mainTexID, _sourceRenderCamera.activeTexture);
+		_targetRenderer.SetPropertyBlock(prop);
 	}
 	#endregion
 }

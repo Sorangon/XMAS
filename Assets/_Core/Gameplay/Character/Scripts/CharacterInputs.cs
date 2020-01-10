@@ -44,7 +44,6 @@ public class CharacterInputs : MonoBehaviour
 			aimLogo.SetActive(true);
 		}
 		if(Input.GetMouseButtonUp(0)) {
-			Debug.Log("Mouse up");
 			Throw();
 			aimLogo.SetActive(false);
 		}

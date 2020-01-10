@@ -2722,5 +2722,35 @@ PrefabInstance:
       propertyPath: m_Name
       value: Characters
       objectReference: {fileID: 0}
+    - target: {fileID: 8347344240422173940, guid: e5401ab2b923cb74ba53276dbca2d32e,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8347344240422173940, guid: e5401ab2b923cb74ba53276dbca2d32e,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 5.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 8347344240422173940, guid: e5401ab2b923cb74ba53276dbca2d32e,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 5.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 8347344240422173940, guid: e5401ab2b923cb74ba53276dbca2d32e,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8347344240422173940, guid: e5401ab2b923cb74ba53276dbca2d32e,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f56b841d0b56c5d4786472218107d40a, type: 2}
+    - target: {fileID: 8347344240422173940, guid: e5401ab2b923cb74ba53276dbca2d32e,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5401ab2b923cb74ba53276dbca2d32e, type: 3}
