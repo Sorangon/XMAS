@@ -5,7 +5,6 @@ using UnityEngine;
 public class CharacterMovements : MonoBehaviour {
 	#region Properties
 	public float _force = 1f;
-	public Vector3 _rotationAxis;
 	#endregion
 
 	#region Getters
@@ -40,12 +39,11 @@ public class CharacterMovements : MonoBehaviour {
 	public void CharacterLookAt(Vector2 direction) {
 		direction.Normalize();
 		float angle = -Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90f;
-		_characterRenderer.transform.rotation = Quaternion.AngleAxis(angle, _rotationAxis.normalized);
+		_characterRenderer.transform.rotation = Quaternion.AngleAxis(angle, Vector3.up);
 	}
 	#endregion
 
 	private void OnDrawGizmos() {
 		Gizmos.color = Color.green;
-		Gizmos.DrawRay(transform.position, _rotationAxis);
 	}
 }
