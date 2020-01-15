@@ -299,6 +299,7 @@ GameObject:
   - component: {fileID: 339918465735123794}
   - component: {fileID: 4033607233605566342}
   - component: {fileID: 339918465735123793}
+  - component: {fileID: 4052514786153908679}
   m_Layer: 8
   m_Name: Characters
   m_TagString: Untagged
@@ -412,6 +413,35 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!114 &4052514786153908679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 339918465735123799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d724a09566e89814ca162094246fdd20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dashSoundList:
+  - {fileID: 8300000, guid: 59df102ac6c1cef47bace309577f9c00, type: 3}
+  - {fileID: 8300000, guid: 0b9d77bf432857d4abf5ceca4653c416, type: 3}
+  - {fileID: 8300000, guid: fe3dfe13bcf43a142837770d442275b6, type: 3}
+  - {fileID: 8300000, guid: b70a07ec1e6bdc444852c65af19a0f72, type: 3}
+  chargeDashSoundList:
+  - {fileID: 8300000, guid: 68b2334ee766f0845867f16e2f5082ee, type: 3}
+  - {fileID: 8300000, guid: db61cfc23e834214da0f2537a1911118, type: 3}
+  hitRockSoundList:
+  - {fileID: 8300000, guid: 22639e4e5e7c8244c9b84b30230eb6b9, type: 3}
+  - {fileID: 8300000, guid: b273525e495e8ef45ba7870bf638aa14, type: 3}
+  - {fileID: 8300000, guid: 86e432c274b0a4e468782a7ec464ca1d, type: 3}
+  hitTreeSoundList:
+  - {fileID: 8300000, guid: ffca0bb479354bd4c9ce481cfa9dd330, type: 3}
+  - {fileID: 8300000, guid: 849d3aff28fe90549a4de6365ff59e2a, type: 3}
+  hitBorderSoundList:
+  - {fileID: 8300000, guid: ff81743efb9d10748a39bc50ecdeaa41, type: 3}
 --- !u!1 &339918466910508065
 GameObject:
   m_ObjectHideFlags: 0
