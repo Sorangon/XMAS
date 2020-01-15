@@ -1,9 +1,13 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.Events;
 
 public class CharacterInputs : MonoBehaviour
 {
+	#region Events
+	public UnityAction OnThrow;
+	public UnityAction OnAimThrow;
+	#endregion
+
 	#region Properties
 	public float minDistance = 10f;
 	public float maxDistance = 50f;
@@ -61,14 +65,16 @@ public class CharacterInputs : MonoBehaviour
 			if (Input.GetTouch(0).phase == TouchPhase.Began) {
 				_loading = true;
 				aimLogo.SetActive(true);
+				
+				OnAimThrow();
 			}
 		}
-		else {
-			if (_loading == true) {
-				Throw();
-				_loading = false;
-				aimLogo.SetActive(false);
-			}
+		else if (_loading == true) {
+			Throw();
+			_loading = false;
+			aimLogo.SetActive(false);
+
+			OnThrow();
 		}
 	}
 
