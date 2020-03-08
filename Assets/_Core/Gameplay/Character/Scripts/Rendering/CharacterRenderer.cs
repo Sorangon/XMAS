@@ -28,6 +28,7 @@ public class CharacterRenderer : MonoBehaviour {
 
 	#region Rendering
 	private void Render() {
+		if (_sourceRenderCamera.activeTexture == null) return;
 		MaterialPropertyBlock prop = new MaterialPropertyBlock();
 		prop.SetTexture(mainTexID, _sourceRenderCamera.activeTexture);
 		_targetRenderer.SetPropertyBlock(prop);
