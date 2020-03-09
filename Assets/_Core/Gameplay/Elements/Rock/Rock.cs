@@ -1,14 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Events;
 
-public class Rock : MonoBehaviour
-{
-    public UnityEvent OnRockSlashed;
+public class Rock : MonoBehaviour {
+	public UnityEvent OnRockSlashed;
 
-    private void OnCollisionEnter2D(Collision2D other)
-    {
-        OnRockSlashed.Invoke();
-    }
+	private void OnCollisionEnter2D(Collision2D other) {
+		OnRockSlashed.Invoke();
+		GameManager.Instance.Lose();
+	}
 }

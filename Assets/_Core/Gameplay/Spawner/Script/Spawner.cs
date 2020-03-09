@@ -58,7 +58,6 @@ public class Spawner : MonoBehaviour
 
 	#region Events
 	public void OnCutTree() {
-		Debug.Log("Cut");
 		_remaining--;
 
 		if(_remaining < 3 && !_generating) {

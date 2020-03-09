@@ -1,16 +1,13 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class CharacterMovements : MonoBehaviour {
-	#region Properties
+	#region Settings
 	public float _force = 1f;
 	#endregion
 
-	#region Getters
+	#region Properties
 	public Vector2 Direction => (_rb.velocity).normalized;
 	#endregion
-
 
 	#region References
 	[Header("Components")]
@@ -18,11 +15,13 @@ public class CharacterMovements : MonoBehaviour {
 	public Transform _characterRenderer = null;
 	#endregion
 
+	#region Callbacks
 	private void Update() {
 		if(_rb.velocity.magnitude > 2f) {
 			CharacterLookAt(_rb.velocity);
 		}
 	}
+	#endregion
 
 	#region Movement
 	public void Impulse(Vector2 direction, float distance) {
@@ -31,7 +30,7 @@ public class CharacterMovements : MonoBehaviour {
 
 	public void Stop() {
 		_rb.velocity = Vector2.zero;
-		GameManager.gameManager.Lose();
+		GameManager.Instance.Lose();
 	}
 	#endregion
 

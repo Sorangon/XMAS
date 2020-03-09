@@ -1,6 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using DG.Tweening;
 
 public class CharacterRenderer : MonoBehaviour {
 	#region Properties
@@ -19,6 +18,10 @@ public class CharacterRenderer : MonoBehaviour {
 		_targetRenderer.sprite = Sprite.Create(spriteTex,
 			new Rect(0f, 0f, _sourceRenderCamera.targetTexture.width, _sourceRenderCamera.targetTexture.height), 
 			new Vector2(0.5f, 0.5f), 100);
+	}
+
+	private void Start() {
+		_targetRenderer.transform.DOPunchScale(Vector3.one, 0.3f, 20);
 	}
 
 	private void Update() {

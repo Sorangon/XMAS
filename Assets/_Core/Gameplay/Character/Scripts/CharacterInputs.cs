@@ -8,11 +8,21 @@ public class CharacterInputs : MonoBehaviour
 	public UnityAction OnAimThrow;
 	#endregion
 
-	#region Properties
+	#region Settings
+	[Header("Settings")]
 	public float minDistance = 10f;
 	public float maxDistance = 50f;
 	public float distanceGrowTime = 1f;
 	public AnimationCurve distanceGrowCurve = AnimationCurve.EaseInOut(0f, 0f, 1f, 1f);
+
+	[Header("States")]
+	public bool _lock = false;
+	#endregion
+
+	#region References
+	[Header("Components")]
+	public CharacterMovements movements;
+	public GameObject aimLogo = null;
 	#endregion
 
 	#region Currents
@@ -20,12 +30,6 @@ public class CharacterInputs : MonoBehaviour
 	private float _chargeAmount = 0.0f;
 	private float _distance = 0.0f;
 	private Vector2 _direction = Vector2.zero;
-	private bool _lock = false;
-	#endregion
-
-	#region References
-	public CharacterMovements movements;
-	public GameObject aimLogo = null;
 	#endregion
 
 	#region Callbacks
