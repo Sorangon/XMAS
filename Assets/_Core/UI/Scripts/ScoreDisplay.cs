@@ -1,15 +1,27 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using TMPro;
 
-public class ScoreDisplay : MonoBehaviour
-{
-    public PlayerScoreData playerScoreData;
-    public TextMeshProUGUI scoreText;
+public class ScoreDisplay : MonoBehaviour {
+	#region References
+	public PlayerScoreData playerScoreData;
+	public TextMeshProUGUI scoreText;
+	public TextMeshProUGUI maxScoreText;
 
-    void Update()
-    {
-        scoreText.text = playerScoreData.playerScore.ToString();
-    }
+	public bool _diplayScoreOnly = false;
+	#endregion
+
+	#region Callbacks
+	private void Update() {
+		OnUpdateScore();		
+	}
+	#endregion
+
+	#region Update Score
+	private void OnUpdateScore() {
+		scoreText.text = playerScoreData.playerScore.ToString();
+		if (!_diplayScoreOnly) {
+			maxScoreText.text = playerScoreData.playerMaxScore.ToString();
+		}
+	}
+	#endregion
 }

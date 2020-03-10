@@ -511,6 +511,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerScoreData: {fileID: 11400000, guid: 10b57e07dff366e43a6758b701324fd8, type: 2}
   scoreText: {fileID: 4339478236719992884}
+  maxScoreText: {fileID: 0}
+  _diplayScoreOnly: 1
 --- !u!1 &4339478236797825301
 GameObject:
   m_ObjectHideFlags: 0
@@ -525,7 +527,7 @@ GameObject:
   - component: {fileID: 4339478236797825303}
   - component: {fileID: 3506168234312329171}
   m_Layer: 5
-  m_Name: EndGameScreen
+  m_Name: EndMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

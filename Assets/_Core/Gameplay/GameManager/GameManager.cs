@@ -18,15 +18,14 @@ public class GameManager : MonoBehaviour {
 
 	#region Current
 	private Spawner _spawner = null;
-	private int _logs = 0;
 	private static GameManager _instance;
 	private CharacterInputs _currentCharacterInstance = null;
 	private bool _reloading = false;
 	private Vector2 _characterSpawnPosition = Vector2.zero;
+	private bool _isGameOver = false;
 	#endregion
 
 	#region Properties
-	public int Logs => _logs;
 	public static GameManager Instance => _instance;
 	#endregion
 
@@ -48,6 +47,10 @@ public class GameManager : MonoBehaviour {
 
 	#region Manage Game
 	public void StartGame() {
+		if (_isGameOver) {
+			_isGameOver = false;
+		}
+
 		_spawner = FindObjectOfType<Spawner>();
 		_spawner.Spawn(6, 0);
 		//Spawn a player instance
@@ -56,6 +59,9 @@ public class GameManager : MonoBehaviour {
 
 	[ContextMenu("Debug Lose")]
 	public void Lose() {
+		if (_isGameOver) return; //Cannot trigger lose callback again if the game is already lost
+		_isGameOver = true;
+
 #if UNITY_EDITOR
 		if (!Application.isPlaying) return; //Cannot debug if the game isn't running
 #endif
@@ -84,11 +90,5 @@ public class GameManager : MonoBehaviour {
 		_reloading = false;
 		yield return null;
 	}
-#endregion
-
-#region Manage Score
-	public void CollectLog(int collected) {
-		_logs += collected;
-	}
-#endregion
+	#endregion
 }
