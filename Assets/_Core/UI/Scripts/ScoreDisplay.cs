@@ -18,9 +18,9 @@ public class ScoreDisplay : MonoBehaviour {
 
 	#region Update Score
 	private void OnUpdateScore() {
-		scoreText.text = playerScoreData.playerScore.ToString();
+		scoreText.text = playerScoreData.PlayerScore.ToString();
 		if (!_diplayScoreOnly) {
-			maxScoreText.text = playerScoreData.playerMaxScore.ToString();
+			maxScoreText.text = playerScoreData.PlayerMaxScore.ToString();
 		}
 	}
 	#endregion

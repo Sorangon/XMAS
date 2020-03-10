@@ -12,5 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4ecd4e9213abaa438d365f292775f88, type: 3}
   m_Name: PlayerScoreData
   m_EditorClassIdentifier: 
-  playerScore: 21
-  playerMaxScore: 100
+  baseMaxScore: 50

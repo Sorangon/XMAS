@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using DG.Tweening;
 
@@ -14,6 +13,9 @@ public class GameManager : MonoBehaviour {
 	[Header("UI")]
 	public StartMenu _startMenu;
 	public EndMenu _endMenu;
+
+	[Header("Datas")]
+	public PlayerScoreData _scoreData = null;
 	#endregion
 
 	#region Current
@@ -43,6 +45,10 @@ public class GameManager : MonoBehaviour {
 		Instantiate(_startMenu);
 		_characterSpawnPosition = _characterSpawnTransform.position;
 	}
+
+	private void Start() {
+		_scoreData.LoadScore();
+	}
 	#endregion
 
 	#region Manage Game
@@ -61,6 +67,8 @@ public class GameManager : MonoBehaviour {
 	public void Lose() {
 		if (_isGameOver) return; //Cannot trigger lose callback again if the game is already lost
 		_isGameOver = true;
+
+		_scoreData.SaveScore();
 
 #if UNITY_EDITOR
 		if (!Application.isPlaying) return; //Cannot debug if the game isn't running

@@ -249,6 +249,7 @@ MonoBehaviour:
     type: 3}
   _endMenu: {fileID: 3506168234312329171, guid: 701cb9fab76e1964ba11a2c70630ddf8,
     type: 3}
+  _scoreData: {fileID: 11400000, guid: 10b57e07dff366e43a6758b701324fd8, type: 2}
 --- !u!4 &298419708
 Transform:
   m_ObjectHideFlags: 0
@@ -1360,6 +1361,7 @@ MonoBehaviour:
   playerScoreData: {fileID: 11400000, guid: 10b57e07dff366e43a6758b701324fd8, type: 2}
   scoreText: {fileID: 1376936067}
   maxScoreText: {fileID: 2128100368}
+  _diplayScoreOnly: 0
 --- !u!1 &919534133
 GameObject:
   m_ObjectHideFlags: 0

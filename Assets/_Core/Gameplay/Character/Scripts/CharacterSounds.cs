@@ -37,6 +37,7 @@ public class CharacterSounds : MonoBehaviour
     private void PlayDashSound()
     {
         PlayPickedSoundInList(dashSoundList);
+        Debug.Log("Play dash SFX");
     }
 
     private void PlayChargeDashSound()
